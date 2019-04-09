@@ -8,10 +8,10 @@ END
 --файл данных и файл журнала транзакций
 CREATE DATABASE streamlab
 ON PRIMARY
-(NAME = N'streamlab', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab.mdf',
+(NAME = N'streamlab', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab.mdf',
 SIZE = 51200KB, FILEGROWTH = 10240KB)
 LOG ON
-(NAME = N'streamlab_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_log.mdf',
+(NAME = N'streamlab_log', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_log.mdf',
 SIZE = 10240KB, FILEGROWTH = 10%)
 COLLATE Cyrillic_General_100_CI_AI
 GO
@@ -25,37 +25,37 @@ GO
 --быстроменяющиеся
 ALTER DATABASE streamlab ADD FILEGROUP Fast_Growing
 ALTER DATABASE streamlab ADD FILE
-(NAME = N'streamlab_Fast_Growing', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Fast_Growing.ndf',
+(NAME = N'streamlab_Fast_Growing', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Fast_Growing.ndf',
 SIZE = 158400KB, FILEGROWTH = 21200KB) TO FILEGROUP Fast_Growing
 
 --часто запрашиваемые
 ALTER DATABASE streamlab ADD FILEGROUP Frequently_requested
 ALTER DATABASE streamlab ADD FILE
-(NAME = N'streamlab_Frequently_requested', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Frequently_requested.ndf',
+(NAME = N'streamlab_Frequently_requested', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Frequently_requested.ndf',
 SIZE = 158400KB, FILEGROWTH = 51200KB) TO FILEGROUP Frequently_requested
 
 --медленно меняющиеся
 ALTER DATABASE streamlab ADD FILEGROUP Slow_Growing
 ALTER DATABASE streamlab ADD FILE
-(NAME = N'streamlab_Slow_Growing', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Slow_Growing.ndf',
+(NAME = N'streamlab_Slow_Growing', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Slow_Growing.ndf',
 SIZE = 158400KB, FILEGROWTH = 20000KB) TO FILEGROUP Slow_Growing
 
 --только для считывания
 ALTER DATABASE streamlab ADD FILEGROUP Only_for_reading
 ALTER DATABASE streamlab ADD FILE
-(NAME = N'streamlab_Only_for_reading', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Only_for_reading.ndf',
+(NAME = N'streamlab_Only_for_reading', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Only_for_reading.ndf',
 SIZE = 100400KB, FILEGROWTH = 20000KB) TO FILEGROUP Only_for_reading
 
 --секционирование
 ALTER DATABASE streamlab ADD FILEGROUP Indices
 ALTER DATABASE streamlab ADD FILE
-(NAME = N'streamlab_Indices', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Indices.ndf',
+(NAME = N'streamlab_Indices', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_Indices.ndf',
 SIZE = 100400KB, FILEGROWTH = 20000KB) TO FILEGROUP Indices
 
 
 ALTER DATABASE streamlab ADD FILEGROUP My_Default
 ALTER DATABASE streamlab ADD FILE
-(NAME = N'streamlab_My_Default', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_My_Default.ndf',
+(NAME = N'streamlab_My_Default', FILENAME = N'C:\MSSQL14.MSSQLSERVER\MSSQL\DATA\streamlab_My_Default.ndf',
 SIZE = 100400KB, FILEGROWTH = 20000KB) TO FILEGROUP My_Default
 
 
